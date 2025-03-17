@@ -19,7 +19,7 @@ section:not(:first-of-type) {
 }
 
 section:nth-child(2n) {
-  background-color: #ecf2ff;
+  background-color: #e5e5e5;
 }
 
 .container a {
