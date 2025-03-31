@@ -1,42 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark Anthony Custodio | Full Stack Developer</title>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css'><link rel="stylesheet" href="./style.css">
-
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .tool-icon img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    
+    /* Make Express.js and Bootstrap icons larger */
+    .tool-icon img[alt="Express.js"],
+    .tool-icon img[alt="Bootstrap"] {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
 </head>
 <body>
+<!-- Animated Background -->
+<div id="background-animation" class="background-animation"></div>
+
 <!-- partial:index.partial.html -->
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container-lg">
-    <a class="navbar-brand fw-bold" href="#">DevMac</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand fw-bold order-1 order-lg-0" href="#">
+      <span class="highlight">Dev</span>Mac
+    </a>
+    <div class="theme-toggle-wrapper order-2 order-lg-2">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="bi bi-sun-fill light-icon"></i>
+        <i class="bi bi-moon-fill dark-icon"></i>
+      </button>
+    </div>
+    <button class="navbar-toggler order-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse order-4 order-lg-1" id="navbarNav">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#hero">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#testimonials">Testimonials</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link d-lg-none" href="#contact">Contact</a>
-        </li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link d-lg-none" href="#contact">Contact</a></li>
       </ul>
-      <a class="btn btn-outline-dark d-none d-lg-block" href="#contact">Let's Talk</a>
+      <a class="btn btn-primary contact-btn d-none d-lg-block" href="#contact">Let's Talk</a>
     </div>
   </div>
 </nav>
@@ -44,173 +62,545 @@
 <section class="hero" id="hero">
   <div class="container-lg">
     <div class="row align-items-center">
-      <div class="col-sm-6">
-        <h1 class="display-2 fw-bold">Mark Anthony Custodio</h1>
-        <p>"Hi, <b>I'm FULL STACK DEVELOPER!</b>  
-          Welcome to my portfolio. I'm a passionate in Web Development with a keen eye for design and a love for clean, functional code. Explore my projects to see how I bring ideas to life through [mention skills like HTML, CSS, JavaScript, Bootstrap, etc.]. Let's create something amazing together!"  
-          Let me know if you want to tweak it based on your specific skills and style! 🚀</p>
-        <button class="btn btn-outline-dark btn-lg">Projects</button>
+      <div class="col-md-6">
+        <div class="hero-text">
+          <span class="subtitle">👋 Hello, I'm</span>
+          <h1 class="display-3 fw-bold">Mark Anthony Custodio</h1>
+          <div class="typed-text mb-4">
+            <span class="profession">FULL STACK DEVELOPER</span>
+          </div>
+          <p class="lead">Passionate backend developer focused on building robust, scalable server-side applications with secure APIs and efficient database systems.</p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary me-3">View My Work</a>
+            <a href="#contact" class="btn btn-outline-dark">Get In Touch</a>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 text-center">
-        <img src="images/photo.jpg" class="img-fluid" alt="photome">
+      <div class="col-md-6 text-center">
+        <div class="hero-img">
+          <img src="images/photo.jpg" class="img-fluid rounded-circle profile-img" alt="Mark Anthony Custodio">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-       
+<section class="tools text-center" id="tools">
+  <div class="container">
+    <h2 class="section-title">My Tools</h2>
+    <p class="section-description mb-5">Technologies and software I use daily</p>
+    <div class="row g-4">
+      <div class="col-6 col-md-3 tool-item">
+        <div class="tool-icon">
+          <img src="images/node-logo.webp" alt="Node.js">
+        </div>
+        <h5>Node.js</h5>
+      </div>
+      <div class="col-6 col-md-3 tool-item">
+        <div class="tool-icon">
+          <img src="images/mongodb.jpg" alt="MongoDB">
+        </div>
+        <h5>MongoDB</h5>
+      </div>
+      <div class="col-6 col-md-3 tool-item">
+        <div class="tool-icon">
+          <img src="images/nosql.jpg" alt="NoSQL">
+        </div>
+        <h5>NoSQL</h5>
+      </div>
+      <div class="col-6 col-md-3 tool-item">
+        <div class="tool-icon">
+          <img src="images/express.jpg" alt="Express.js">
+        </div>
+        <h5>Express.js</h5>
+      </div>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-6 col-md-3 tool-item">
+        <div class="tool-icon">
+          <img src="images/javascript-logo.webp" alt="JavaScript">
+        </div>
+        <h5>JavaScript</h5>
+      </div>
+      <div class="col-6 col-md-3 tool-item">
+        <div class="tool-icon">
+          <img src="images/git.jpg" alt="Git/GitHub">
+        </div>
+        <h5>Git/GitHub</h5>
+      </div>
+      <div class="col-6 col-md-3 tool-item">
+        <div class="tool-icon">
+          <img src="images/logo-html5.png" alt="HTML5/CSS3">
+        </div>
+        <h5>HTML5/CSS3</h5>
+      </div>
+      <div class="col-6 col-md-3 tool-item">
+        <div class="tool-icon">
+          <img src="images/bootstrap.png" alt="Bootstrap">
+        </div>
+        <h5>Bootstrap</h5>
       </div>
     </div>
   </div>
 </section>
 
 <section class="services" id="services">
-  <div class="container">
-    <h2 class="display-5 fw-bold mb-4">Services</h2>
-    <div class="row">
-      <div class="col-lg col-sm-6 mt-4">
-        <div class="card">
-          <img src="images/webdev.png" class="card-img-top" alt="Service 1">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Web Development</h5>
-            <p class="card-text">Building responsive and dynamic websites with the latest technologies.</p>
+  <div class="container text-center">
+    <h2 class="section-title">Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-database-fill"></i>
           </div>
+          <h3>Backend Development</h3>
+          <p>Building robust, scalable server-side applications with secure APIs, database management, and efficient business logic implementation.</p>
         </div>
       </div>
-      <div class="col-lg col-sm-6 mt-4">
-        <div class="card">
-          <img src="images/ui.jpg" class="card-img-top" alt="Service 2">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">UI/UX Design</h5>
-            <p class="card-text">Creating user-friendly and visually appealing interfaces.</p>
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-code-slash"></i>
           </div>
+          <h3>Full Stack Development</h3>
+          <p>Creating end-to-end web solutions that integrate both frontend and backend technologies for seamless user experiences.</p>
         </div>
       </div>
-      <div class="col-lg col-sm-6 m-auto mt-4">
-        <div class="card">
-          <img src="images/devops.png" alt="DevOps Image">
-
-          <div class="card-body">
-            <h5 class="card-title fw-bold">DevOps</h5>
-            <p class="card-text">Optimizing websites for search engines and better online visibility.</p>
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-cloud-check-fill"></i>
           </div>
+          <h3>DevOps & Deployment</h3>
+          <p>Setting up CI/CD pipelines, server configuration, and deployment strategies to ensure your applications run smoothly in production.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-shield-lock-fill"></i>
+          </div>
+          <h3>API Development</h3>
+          <p>Designing and implementing secure, well-documented APIs that connect your applications to data sources and third-party services.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-hdd-network-fill"></i>
+          </div>
+          <h3>Database Design</h3>
+          <p>Creating efficient database schemas, optimizing queries, and implementing data models that support your application needs.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-palette-fill"></i>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>Creating user-friendly and visually appealing interfaces that enhance the user experience.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
 <section class="about" id="about">
   <div class="container">
-    <h2 class="display-5 fw-bold mb-4">About Me</h2>
-    <p>I am a passionate and dedicated Full Stack Web Developer skilled in building responsive, user-friendly websites and applications from front-end interfaces to back-end logic. With expertise in HTML, CSS, JavaScript, Bootstrap, and modern frameworks, I enjoy turning creative ideas into functional and visually appealing digital experiences..</p>
-    <p>I thrive in collaborative environments and continuously seek opportunities to expand my knowledge and improve my skills. From designing sleek user interfaces to developing robust backend systems, I am committed to creating high-quality web solutions that solve real-world problems and enhance user experiences.</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-start">
+        <p>I am a passionate and dedicated <strong>Full Stack Web Developer</strong> with a focus on <strong>backend development</strong>. I excel at building robust, scalable server architectures, RESTful APIs, and database systems that power modern web applications.</p>
+        <p>With expertise in backend technologies like Node.js, Python, and SQL/NoSQL databases, along with frontend skills in HTML, CSS, and JavaScript, I create comprehensive web solutions that prioritize performance, security, and maintainability. I thrive in collaborative environments and continuously seek opportunities to expand my knowledge in server-side technologies and cloud infrastructure.</p>
+        <div class="about-details">
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <p><strong><i class="bi bi-envelope"></i> Email:</strong> markcustodii@gmail.com</p>
+              <p><strong><i class="bi bi-telephone"></i> Phone:</strong> 09452103585</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong><i class="bi bi-geo-alt"></i> Location:</strong> Philippines</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <a href="#" class="btn btn-primary me-3">Download CV</a>
+            <a href="#contact" class="btn btn-outline-dark">Contact Me</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <div class="progress-bars">
+          <div class="progress-item">
+            <div class="d-flex justify-content-between mb-1">
+              <span>Backend Development</span>
+              <span>95%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress-item mt-4">
+            <div class="d-flex justify-content-between mb-1">
+              <span>Database Design</span>
+              <span>90%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress-item mt-4">
+            <div class="d-flex justify-content-between mb-1">
+              <span>API Development</span>
+              <span>90%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="progress-item mt-4">
+            <div class="d-flex justify-content-between mb-1">
+              <span>Frontend Development</span>
+              <span>85%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="projects" id="projects">
   <div class="container">
-    <h2 class="display-5 fw-bold mb-4">Projects</h2>
-    <div class="row">
-      <div class="col-lg col-sm-6 mt-4">
-        <div class="card">
-          <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">E-Commerce Website</h5>
-            <p class="card-text">Developed a responsive e-commerce website featuring product listings, shopping cart functionality, and a sleek.
-            </p>
-            <a href="#" class="btn btn-outline-dark">Go somewhere</a>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-description mb-5">Some of my recent work</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" alt="E-Commerce Website">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="bi bi-eye"></i></a>
+                <a href="#" class="project-link"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>E-Commerce Website</h4>
+            <p>Developed a responsive e-commerce website featuring product listings, shopping cart functionality, and a sleek user interface.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg col-sm-6 mt-4">
-        <div class="card">
-          <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title fw-bold"> Portfolio Website</h5>
-            <p class="card-text">Built a dynamic project management dashboard with features like task tracking, status updates, and user assignment.</p>
-            <a href="#" class="btn btn-outline-dark">Go somewhere</a>
+      <div class="col-md-6 col-lg-3">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" alt="Portfolio Website">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="bi bi-eye"></i></a>
+                <a href="#" class="project-link"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>Portfolio Website</h4>
+            <p>Built a dynamic project management dashboard with features like task tracking, status updates, and user assignment.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Bootstrap</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg col-sm-6 mt-4">
-        <div class="card">
-          <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Project Management Dashboard</h5>
-            <p class="card-text">Designed and developed a simple blog platform with categorized posts, a featured section. </p>
-            <a href="#" class="btn btn-outline-dark">Go somewhere</a>
+      <div class="col-md-6 col-lg-3">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" alt="Project Management">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="bi bi-eye"></i></a>
+                <a href="#" class="project-link"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>Project Management Dashboard</h4>
+            <p>Designed and developed a simple blog platform with categorized posts, a featured section.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg col-sm-6 mt-4">
-        <div class="card">
-          <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Blog Platform</h5>
-            <p class="card-text">Created a visually appealing, mobile-friendly landing page with smooth navigation, responsive grids, and well-structured.
-            </p>
-            <a href="#" class="btn btn-outline-dark">Go somewhere</a>
+      <div class="col-md-6 col-lg-3">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" alt="Blog Platform">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link"><i class="bi bi-eye"></i></a>
+                <a href="#" class="project-link"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>Blog Platform</h4>
+            <p>Created a visually appealing, mobile-friendly landing page with smooth navigation and responsive grids.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Bootstrap</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials" id="testimonials">
-  <div class="container">
-    <h2 class="display-5 fw-bold mb-4">Testimonials</h2>
-    <div id="carouselExample" class="carousel slide carousel-dark carousel-fade">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <p>Working with as a Full Stack Web Developer has been an absolute pleasure. Their expertise in building seamless, responsive websites and applications is truly impressive. From crafting sleek, user-friendly interfaces to developing powerful backend systems, they demonstrate exceptional skill and attention to detail. </p>
-          <h5>Team</h5>
-        </div>
-        <div class="carousel-item">
-          <p>I had the pleasure of working with [Your Name] on several web development projects, and their talent as a Full Stack Web Developer is remarkable. They have a strong grasp of both front-end and back-end technologies, creating responsive, efficient, and visually stunning websites.
-          </p>
-          <h5>Team</h5>
-        </div>
-        <div class="carousel-item">
-          <p>Hardworking" </p>
-          <h5>Team</h5>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="container">
-    <h2 class="display-5 fw-bold mb-4">Contact Me</h2>
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-description mb-5">Feel free to contact me</p>
     <div class="row">
-      <div class="col-sm-4 mt-4">
-        <a href="#"><i class="bi bi-envelope-fill"></i> markcustodii@gmail.com</a>
-      </div>
-      <div class="col-sm-4 mt-4">
-        <div class="social-media">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <div class="contact-text">
+              <h5>Location</h5>
+              <p>Philippines</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="bi bi-envelope-fill"></i>
+            </div>
+            <div class="contact-text">
+              <h5>Email</h5>
+              <p>markcustodii@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="bi bi-telephone-fill"></i>
+            </div>
+            <div class="contact-text">
+              <h5>Phone</h5>
+              <p>09452103585</p>
+            </div>
+          </div>
+          <div class="social-media">
+            <a href="https://www.facebook.com/markanthonyabril.custodio" class="social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+          </div>
         </div>
       </div>
-      <div class="col-sm-4 mt-4">
-        <a href="#"><i class="bi bi-telephone-fill"></i> 09452103585</a>
+      <div class="col-lg-7">
+        <form class="contact-form" action="https://formsubmit.co/markcustodii@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from portfolio website">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="col-12">
+              <input type="text" name="subject" class="form-control" placeholder="Subject">
+            </div>
+            <div class="col-12">
+              <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary w-100 submit-btn">
+                <span class="submit-text">Send Message</span>
+                <span class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="text-center p-3 bg-body-tertiary">
-  <div>&copy; 2025. All Rights Reserved.</div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="fw-bold">DevMac</h3>
+        <p>Full Stack Web Developer specializing in creating beautiful, functional websites and applications.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <!-- Social media links removed -->
+      </div>
+    </div>
+    <hr>
+    <div class="copyright text-center">
+      <p>&copy; 2025 Mark Anthony Custodio. All Rights Reserved.</p>
+    </div>
+  </div>
 </footer>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js'></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Generate background animation elements
+    const backgroundAnimation = document.getElementById('background-animation');
+    const animationConfig = [
+      { width: 70, height: 70, left: 5, delay: 0, duration: 22 },
+      { width: 150, height: 150, left: 10, delay: 2, duration: 26 },
+      { width: 80, height: 80, left: 20, delay: 0, duration: 18 },
+      { width: 100, height: 100, left: 30, delay: 4, duration: 24 },
+      { width: 60, height: 60, left: 40, delay: 0, duration: 20 },
+      { width: 120, height: 120, left: 50, delay: 6, duration: 30 },
+      { width: 90, height: 90, left: 60, delay: 0, duration: 25 },
+      { width: 140, height: 140, left: 70, delay: 8, duration: 28 },
+      { width: 110, height: 110, left: 80, delay: 5, duration: 20 },
+      { width: 50, height: 50, left: 90, delay: 3, duration: 18 }
+    ];
+    
+    animationConfig.forEach(config => {
+      const span = document.createElement('span');
+      span.style.width = `${config.width}px`;
+      span.style.height = `${config.height}px`;
+      span.style.left = `${config.left}%`;
+      span.style.animationDelay = `${config.delay}s`;
+      span.style.animationDuration = `${config.duration}s`;
+      backgroundAnimation.appendChild(span);
+    });
+    
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    
+    // Theme toggle event
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    
+    // Form submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function() {
+        const submitBtn = document.querySelector('.submit-btn');
+        const submitText = document.querySelector('.submit-text');
+        const spinner = document.querySelector('.spinner-border');
+        submitText.textContent = 'Sending...';
+        spinner.classList.remove('d-none');
+        submitBtn.disabled = true;
+      });
+    }
+    
+    // Enhanced scroll reveal animation
+    const animateElements = () => {
+      // Animate sections
+      const sections = document.querySelectorAll('section:not(#hero)');
+      sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      });
+      
+      // Animate elements within sections
+      const cards = document.querySelectorAll('.service-card, .project-card, .tool-item, .contact-item');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(40px)';
+        card.style.transition = `opacity 0.7s ease-out ${index * 0.1}s, transform 0.7s ease-out ${index * 0.1}s`;
+      });
+      
+      // Animate progress bars
+      const progressBars = document.querySelectorAll('.progress-item');
+      progressBars.forEach((bar, index) => {
+        bar.style.opacity = '0';
+        bar.style.transform = 'translateX(-30px)';
+        bar.style.transition = `opacity 0.8s ease-out ${index * 0.15}s, transform 0.8s ease-out ${index * 0.15}s`;
+      });
+      
+      // Create intersection observer for sections
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('section-visible');
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              sectionObserver.unobserve(entry.target);
+              
+              // Animate elements inside the visible section
+              const elementsInSection = entry.target.querySelectorAll('.service-card, .project-card, .tool-item, .contact-item, .progress-item');
+              elementsInSection.forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0) translateX(0)';
+              });
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+      });
+    };
+    
+    // Initialize animations
+    animateElements();
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Close navbar if it's open on mobile
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            document.querySelector('.navbar-toggler').click();
+          }
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
